@@ -72,6 +72,7 @@ nav {
     align-items: center; 
     justify-content: center; 
     position: relative; 
+    padding: 0 20px;
     overflow: hidden; 
 }
 .video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
@@ -125,7 +126,7 @@ nav {
 .showcase { padding: 100px 10%; background: #080808; }
 .section-tag { text-align: center; letter-spacing: 5px; color: var(--text-dim); font-size: 0.8rem; margin-bottom: 60px; text-transform: uppercase; }
 
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; width: 100%; }
 
 .p-card { 
     background: var(--glass); 
@@ -136,6 +137,7 @@ nav {
     text-decoration: none; 
     display: block; 
     color: inherit;
+    width: 100%;
 }
 .p-card:hover { 
     border-color: var(--pink); 
@@ -235,7 +237,7 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
 
 
 /* Tối ưu hóa cho điện thoại */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     /* 1. Giảm kích thước chữ tiêu đề để không bị tràn màn hình */
     .main-title {
         font-size: 3.5rem; /* Nhỏ hơn so với máy tính */
@@ -260,8 +262,10 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
 
     .hero-btns {
         display: flex;
-        flex-direction: column; /* Xếp chồng các nút bấm lên nhau */
-        gap: 15px;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
     }
 
     .btn {
