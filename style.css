@@ -244,6 +244,8 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
         letter-spacing: -2px;
     }
     
+    nav .nav-links { display: none; }
+
     .headline {
         font-size: 1.8rem;
     }
