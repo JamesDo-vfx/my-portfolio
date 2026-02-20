@@ -285,3 +285,164 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
         font-size: 0.7rem;
     }
 }
+
+
+
+
+/* --- TỐI ƯU TOÀN BỘ SOFTWARE STACK --- */
+
+.software-stack {
+    padding: 80px 5%;
+    text-align: center;
+    position: relative;
+}
+
+/* Container chính chứa các icon phần mềm */
+.stack-container {
+    display: grid;
+    /* CHÌA KHÓA: Chia chính xác thành 5 cột bằng nhau */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Đảm bảo mỗi ô item luôn giữ đúng vị trí trong Grid */
+.stack-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Đảm bảo item luôn căn giữa trong cột của nó */
+    text-align: center;
+}
+
+/* Các thuộc tính .stack-icon và .software-img bạn giữ nguyên như cũ nhé */
+
+
+/* Tùy chỉnh thanh cuộn mảnh để không làm xấu layout */
+.stack-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.stack-container::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
+
+/* Ẩn thanh cuộn xấu xí của trình duyệt để nhìn tinh tế hơn */
+.stack-container::-webkit-scrollbar {
+    height: 4px; /* Thanh cuộn cực mảnh */
+}
+
+.stack-container::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
+
+.stack-container::-webkit-scrollbar-thumb:hover {
+    background: var(--pink); /* Hiện màu khi người dùng tương tác */
+}
+
+.stack-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Giúp icon nhảy vào giữa màn hình khi dừng cuộn */
+    scroll-snap-align: center; 
+}
+
+.stack-icon {
+    width: 75px; 
+    height: 75px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Cắt bỏ phần thừa nếu logo tràn ra */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.software-img {
+    /* Ép logo chiếm trọn 100% chiều rộng và cao của ô stack-icon */
+    width: 100%; 
+    height: 100%;
+    /* object-fit: cover sẽ giúp logo lấp đầy box mà không bị méo hình */
+    object-fit: cover; 
+    transition: all 0.4s ease;
+}
+
+/* Hiệu ứng khi hover vẫn giữ nguyên để đẹp mắt */
+.stack-item:hover .stack-icon {
+    border-color: var(--icon-color);
+    box-shadow: 0 0 30px var(--icon-color);
+    transform: translateY(-10px);
+}
+
+.stack-item:hover .software-img {
+    transform: scale(1.1); /* Phóng to nhẹ icon bên trong */
+    /* Tạo hiệu ứng icon tự phát sáng */
+    filter: drop-shadow(0 0 5px var(--icon-color)) brightness(1.5);
+}
+
+.stack-item:hover .stack-icon svg {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px var(--icon-color));
+}
+
+.stack-item p {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.stack-item:hover p {
+    color: var(--icon-color);
+    text-shadow: 0 0 12px var(--icon-color);
+    letter-spacing: 2px; /* Hiệu ứng giãn chữ nhẹ khi hover */
+}
+
+/* TỐI ƯU GRID DỰ ÁN */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* MOBILE TWEAK (Dành cho điện thoại) */
+@media (max-width: 600px) {
+    .stack-container { 
+        gap: 25px; 
+        padding: 0 10px;
+    }
+    
+    .stack-icon { 
+        width: 65px; 
+        height: 65px; 
+        border-radius: 15px;
+    }
+    
+    .stack-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .stack-item p {
+        font-size: 0.65rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Luôn là 1 cột trên đt để không bị lệch */
+    }
+}
