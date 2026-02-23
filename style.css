@@ -301,7 +301,7 @@ footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border
 .stack-container {
     display: grid;
     /* CHÌA KHÓA: Chia chính xác thành 5 cột bằng nhau */
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(4, 1fr); 
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
